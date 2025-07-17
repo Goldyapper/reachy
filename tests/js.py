@@ -82,6 +82,12 @@ class JoyController():
         # Any abs(value) below min_joy_position will be assumed to be 0
         self.min_joy_position = 0.03
 
+        self.arm_state = 'idle'  # could be 'idle', 'going_up', 'going_down'
+        self.arm_target_pos_up = -90.0  # raised position
+        self.arm_target_pos_down = 0.0  # lowered position
+        self.arm_move_duration = 1.0  # seconds to go up or down
+        self.arm_move_start_time = None
+
         print(msg)
         ip_address = '192.168.100.100'  # Replace with your Reachy's IP address
         print(f"Connecting to {ip_address}")
@@ -113,31 +119,38 @@ class JoyController():
 
         raise RuntimeError(msg)
 
-    def raise_left_arm(self):
-        import time
+    def update_arm_position(self):
+        current_pos = self.reachy.joints.l_shoulder_pitch.present_position
 
-        target_positions = {
-            'l_shoulder_pitch': -90.0,
-            'l_elbow_pitch': 40.0,
-            'l_shoulder_roll': 0.0
-        }
-        duration = 0.25
-        steps = 50
-        dt = duration / steps
+        if self.arm_state == 'going_up':
+            elapsed = time.time() - self.arm_move_start_time
+            alpha = min(elapsed / self.arm_move_duration, 1.0)  # 0->1 over duration
+            new_pos = (1 - alpha) * self.arm_target_pos_down + alpha * self.arm_target_pos_up
+            self.reachy.joints.l_shoulder_pitch.goal_position = new_pos
 
-        start_positions = {
-            name: getattr(self.reachy.joints, name).present_position for name in target_positions
-        }
+            if alpha >= 1.0:
+                # Reached top, start going down gradually
+                self.arm_state = 'going_down'
+                self.arm_move_start_time = time.time()
 
-        for i in range(steps + 1):
-            alpha = i / steps
-            for name in target_positions:
-                pos = (1 - alpha) * start_positions[name] + alpha * target_positions[name]
-                getattr(self.reachy.joints, name).goal_position = pos
+        elif self.arm_state == 'going_down':
+            elapsed = time.time() - self.arm_move_start_time
+            # Gradually go down over, say, 5 seconds (adjust as you want)
+            down_duration = 1.0
+            alpha = min(elapsed / down_duration, 1.0)
+            new_pos = (1 - alpha) * self.arm_target_pos_up + alpha * self.arm_target_pos_down
+            self.reachy.joints.l_shoulder_pitch.goal_position = new_pos
 
+            if alpha >= 1.0:
+                self.arm_state = 'idle'
+                self.arm_move_start_time = None
 
+        else:
+            # idle state, hold current position
+            self.reachy.joints.l_shoulder_pitch.goal_position = current_pos
 
     def tick_controller(self):
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.emergency_shutdown("Normal pygame quit")
@@ -146,9 +159,10 @@ class JoyController():
                     msg = "Pressed emergency stop!"
                     print(msg)
                     self.emergency_shutdown(msg)
-                if self.j.get_button(4):
-                    print("Button 0 pressed: Raising left arm")
-                    self.raise_left_arm()
+                if self.j.get_button(4):  # button 4 pressed
+                    if self.arm_state in ['idle', 'going_down']:
+                        self.arm_state = 'going_up'
+                        self.arm_move_start_time = time.time()
 
                 if self.j.get_button(6):  # l2
                     self.lin_speed_ratio = min(3.0, self.lin_speed_ratio+0.05)
@@ -225,6 +239,7 @@ class JoyController():
 
     def main_tick(self):
         self.tick_controller()
+        self.update_arm_position()
         x_vel, y_vel, rot_vel = self.speeds_from_joystick()
         self.mobile_base.set_speed(x_vel=x_vel, y_vel=y_vel, rot_vel=rot_vel*180.0/math.pi)
 
