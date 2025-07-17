@@ -7,7 +7,7 @@ from signal import signal, SIGINT
 import math
 
 from mobile_base_sdk import MobileBaseSDK
-from reachy import Reachy, parts
+from reachy_sdk import ReachySDK
 
 
 # To be able to use pygame in "headless" mode, typically if there is no screen connected,
@@ -87,6 +87,9 @@ class JoyController():
         print(f"Connecting to {ip_address}")
         self.mobile_base = MobileBaseSDK(ip_address)
 
+        self.reachy = ReachySDK(host='192.168.100.100')
+        self.reachy.turn_on('l_arm')
+
 
         def emergency_shutdown_(signal_received, frame):
             self.emergency_shutdown("SIGINT received")
@@ -104,9 +107,35 @@ class JoyController():
         # self.mobile_base.emergency_shutdown()
         # Instead, we set the speeds to 0
         self.mobile_base.set_speed(x_vel=0.0, y_vel=0.0, rot_vel=0.0)
+        print("Turning off left arm smoothly")
+        self.reachy.turn_off_smoothly('l_arm')
         print("Emergency shutdown. Setting speeds to 0")
 
         raise RuntimeError(msg)
+
+    def raise_left_arm(self):
+        import time
+
+        target_positions = {
+            'l_shoulder_pitch': -90.0,
+            'l_elbow_pitch': 40.0,
+            'l_shoulder_roll': 0.0
+        }
+        duration = 0.25
+        steps = 50
+        dt = duration / steps
+
+        start_positions = {
+            name: getattr(self.reachy.joints, name).present_position for name in target_positions
+        }
+
+        for i in range(steps + 1):
+            alpha = i / steps
+            for name in target_positions:
+                pos = (1 - alpha) * start_positions[name] + alpha * target_positions[name]
+                getattr(self.reachy.joints, name).goal_position = pos
+
+
 
     def tick_controller(self):
         for event in pygame.event.get():
@@ -117,6 +146,10 @@ class JoyController():
                     msg = "Pressed emergency stop!"
                     print(msg)
                     self.emergency_shutdown(msg)
+                if self.j.get_button(4):
+                    print("Button 0 pressed: Raising left arm")
+                    self.raise_left_arm()
+
                 if self.j.get_button(6):  # l2
                     self.lin_speed_ratio = min(3.0, self.lin_speed_ratio+0.05)
                     print("max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s"
