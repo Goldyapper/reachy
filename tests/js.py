@@ -7,7 +7,7 @@ from signal import signal, SIGINT
 import math
 
 from mobile_base_sdk import MobileBaseSDK
-from reachy import Reachy, parts
+from reachy_sdk import ReachySDK
 
 
 # To be able to use pygame in "headless" mode, typically if there is no screen connected,
@@ -86,6 +86,9 @@ class JoyController():
         ip_address = '192.168.100.100'  # Replace with your Reachy's IP address
         print(f"Connecting to {ip_address}")
         self.mobile_base = MobileBaseSDK(ip_address)
+
+        self.reachy = ReachySDK(host='192.168.100.100')
+        self.reachy.turn_on('l_arm')
 
 
         def emergency_shutdown_(signal_received, frame):
