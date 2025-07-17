@@ -45,7 +45,7 @@ CTRL-C  or press CIRCLE on the controller to quit
 # Button 11 = joy_left
 # Button 12 = joy_right
 
-# XBOX controller:
+# XBOX controller:ip_address
 # Button  0 = A
 # Button  1 = B
 # Button  2 = X
@@ -83,11 +83,9 @@ class JoyController():
         self.min_joy_position = 0.03
 
         print(msg)
-        ip_address = '172.16.42.113'  # Replace with your Reachy's IP address
+        ip_address = '192.168.100.100'  # Replace with your Reachy's IP address
         print(f"Connecting to {ip_address}")
         self.mobile_base = MobileBaseSDK(ip_address)
-        self.reachy = Reachy(left_arm=parts.LeftArm(io='/dev/ttyUSB1'))  # ← Replace with correct port
-        self.reachy.left_arm.shoulder_pitch.compliant = False  
 
 
         def emergency_shutdown_(signal_received, frame):
@@ -106,7 +104,6 @@ class JoyController():
         # self.mobile_base.emergency_shutdown()
         # Instead, we set the speeds to 0
         self.mobile_base.set_speed(x_vel=0.0, y_vel=0.0, rot_vel=0.0)
-        self.reachy.left_arm.shoulder_pitch.compliant = True  # ← Make arm safe again
         print("Emergency shutdown. Setting speeds to 0")
 
         raise RuntimeError(msg)
@@ -120,16 +117,6 @@ class JoyController():
                     msg = "Pressed emergency stop!"
                     print(msg)
                     self.emergency_shutdown(msg)
-                if self.j.get_button(2):  # X button 
-                    current_angle = self.reachy.left_arm.shoulder_pitch.goal_position
-                    new_angle = min(current_angle + 5, 90)  # Limit to 90 degrees
-                    self.reachy.left_arm.shoulder_pitch.goal_position = new_angle
-                    print(f"Raising left arm to {new_angle:.1f}°")
-                if self.j.get_button(3):  # X button 
-                    current_angle = self.reachy.left_arm.shoulder_pitch.goal_position
-                    new_angle = min(current_angle - 5, -90)  # Limit to 90 degrees
-                    self.reachy.left_arm.shoulder_pitch.goal_position = new_angle
-                    print(f"Raising left arm to {new_angle:.1f}°")
                 if self.j.get_button(6):  # l2
                     self.lin_speed_ratio = min(3.0, self.lin_speed_ratio+0.05)
                     print("max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s"
