@@ -1,16 +1,33 @@
-from reachy_sdk import ReachySDK
 import time
+import numpy as np
+from reachy_sdk import ReachySDK
 
 reachy = ReachySDK(host='192.168.100.100')
-time.sleep(3)  # wait for motion to complete
-
 reachy.turn_on('l_arm')
-print(reachy.joints.l_shoulder_pitch.present_position)
+print(reachy.joints.l_shoulder_pitch.compliant)  # should be False
 
-# Set the target position in radians:
-reachy.joints.l_shoulder_pitch.goal_position = 20.0
-reachy.joints.l_elbow_pitch.goal_position = 20.0
-reachy.joints.l_shoulder_roll.goal_position = 20.0
+# Set target positions (in degrees)
+target_positions = {
+    'l_shoulder_pitch': -50.0,
+    'l_elbow_pitch': 0.0,
+    'l_shoulder_roll': 0.0
+}
 
-time.sleep(3)  # wait for motion to complete
+# Duration of movement in seconds
+duration = 2.0
+steps = 50
+dt = duration / steps
+
+start_positions = {
+    name: getattr(reachy.joints, name).present_position for name in target_positions
+}
+
+# Interpolate and apply
+for i in range(steps + 1):
+    alpha = i / steps
+    for name in target_positions:
+        pos = (1 - alpha) * start_positions[name] + alpha * target_positions[name]
+        getattr(reachy.joints, name).goal_position = pos
+    time.sleep(dt)
+
 reachy.turn_off_smoothly('l_arm')
