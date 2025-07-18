@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="361d2d8c-adf7-4301-a4ed-c3d8e41b2297" name="Changes" comment="arms move but not smoothly">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/90 degrees left arm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/arms test/wave.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/arms test/90 degrees left arm.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/90 degrees left arm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
