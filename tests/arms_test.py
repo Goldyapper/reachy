@@ -8,8 +8,8 @@ print(reachy.joints.l_shoulder_pitch.compliant)  # should be False
 
 # Set target positions (in degrees)
 target_positions = {
-    'l_shoulder_pitch': -50.0,
-    'l_elbow_pitch': 0.0,
+    'l_shoulder_pitch': -90.0,
+    'l_elbow_pitch': -90.0,
     'l_shoulder_roll': 0.0
 }
 
@@ -30,4 +30,6 @@ for i in range(steps + 1):
         getattr(reachy.joints, name).goal_position = pos
     time.sleep(dt)
 
+
+time.sleep(5)
 reachy.turn_off_smoothly('l_arm')
