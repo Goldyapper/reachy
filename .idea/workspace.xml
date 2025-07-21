@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="361d2d8c-adf7-4301-a4ed-c3d8e41b2297" name="Changes" comment="arms move but not smoothly">
-      <change afterPath="$PROJECT_DIR$/tests/waypoint tests/going forward 50 cm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/waypoint tests/go to one waypoint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms test/turn on and off.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/turn on and off.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms test/wave.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/wave.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/js.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/js.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/waypoint tests/going forward 50 cm.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/waypoint tests/going forward 50 cm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +39,7 @@
     "Python.arms test.executor": "Run",
     "Python.arms_test.executor": "Run",
     "Python.clap.executor": "Run",
+    "Python.go to one waypoint.executor": "Run",
     "Python.going forward 50 cm.executor": "Run",
     "Python.initial.executor": "Run",
     "Python.js.executor": "Run",
@@ -68,7 +67,29 @@
       <recent name="$PROJECT_DIR$/tests/arms test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.going forward 50 cm">
+  <component name="RunManager" selected="Python.go to one waypoint">
+    <configuration name="go to one waypoint" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="reachy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/waypoint tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/waypoint tests/go to one waypoint.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="going forward 50 cm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="reachy" />
       <option name="ENV_FILES" value="" />
@@ -136,28 +157,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="opening the hand" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="reachy" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/arms test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/arms test/opening the hand.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="turn on and off" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="reachy" />
       <option name="ENV_FILES" value="" />
@@ -204,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.go to one waypoint" />
         <item itemvalue="Python.going forward 50 cm" />
         <item itemvalue="Python.js" />
         <item itemvalue="Python.wave" />
         <item itemvalue="Python.turn on and off" />
-        <item itemvalue="Python.opening the hand" />
       </list>
     </recent_temporary>
   </component>

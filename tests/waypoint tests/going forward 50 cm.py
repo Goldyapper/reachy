@@ -15,5 +15,4 @@ time.sleep(3)
 reachy.mobile_base.set_speed(x_vel=0.0, y_vel=0.0, rot_vel=0.0)
 reachy.mobile_base.drive_mode = 'brake'
 
-
 print("movement test complete")
