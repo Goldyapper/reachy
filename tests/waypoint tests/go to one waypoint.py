@@ -15,8 +15,8 @@ reachy.mobile_base.reset_odometry()
 reachy.mobile_base.drive_mode = 'brake'
 
 # Move forward diagonally
-#reachy.mobile_base.goto(x=0.5, y=1.0, theta=0.0)
-#time.sleep(3)
+reachy.mobile_base.goto(x=0.5, y=1.0, theta=0.0)
+time.sleep(3)
 
 # Rotate 360° in 60° steps
 turnarround()
