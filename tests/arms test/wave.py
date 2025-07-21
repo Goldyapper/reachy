@@ -1,8 +1,8 @@
 import time
 from reachy_sdk import ReachySDK
 
-time.sleep(4)
-reachy = ReachySDK(host='192.168.100.100')
+time.sleep(3)
+reachy = ReachySDK(host='172.16.42.113')
 reachy.turn_on('l_arm')
 
 def move_arm(start, end, steps, dt):

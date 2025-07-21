@@ -1,7 +1,7 @@
 import time
 from reachy_sdk import ReachySDK
 
-reachy = ReachySDK(host='192.168.100.100')
+reachy = ReachySDK(host='172.16.42.113')
 reachy.turn_on('l_arm')
 print(reachy.joints.l_shoulder_pitch.compliant)  # should be False
 

@@ -89,11 +89,11 @@ class JoyController():
         self.arm_move_start_time = None
 
         print(msg)
-        ip_address = '192.168.100.100'  # Replace with your Reachy's IP address
+        ip_address = '172.16.42.113'  # Replace with your Reachy's IP address
         print(f"Connecting to {ip_address}")
         self.mobile_base = MobileBaseSDK(ip_address)
 
-        self.reachy = ReachySDK(host='192.168.100.100')
+        self.reachy = ReachySDK(host='172.16.42.113')
         self.reachy.turn_on('l_arm')
 
 
