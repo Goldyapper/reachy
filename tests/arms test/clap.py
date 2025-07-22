@@ -1,7 +1,7 @@
 import time
 from reachy_sdk import ReachySDK
 
-reachy = ReachySDK(host='192.168.100.100')
+reachy = ReachySDK(host='172.16.42.113')
 reachy.turn_on('l_arm')
 reachy.turn_on('r_arm')
 

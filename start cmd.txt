@@ -1,0 +1,3 @@
+ros2 launch reachy_sdk_server reachy_sdk_server.launch.py
+
+ros2 launch zuuu_hal hal.launch.py
