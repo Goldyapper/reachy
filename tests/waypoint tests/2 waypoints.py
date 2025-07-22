@@ -24,7 +24,6 @@ def safe_goto(x_target, y_target, theta_target):
         # Reset odometry to zero so the next step is relative to current position
         reachy.mobile_base.reset_odometry()
 
-
 def turnarround():
     for i in range(6):
         angle_deg = (i + 1) * 60

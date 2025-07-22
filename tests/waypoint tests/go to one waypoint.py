@@ -1,6 +1,5 @@
 from reachy_sdk import ReachySDK
 import time
-import math
 
 def turnarround():
     for i in range(6):
