@@ -20,11 +20,11 @@ def move_backward_simulated(reachy,x_target, y_target):
     time.sleep(2)
 
     # Move forward (actually moving backward from original heading)
-    safe_goto(reachy,x_target, -y_target, 0.0)
-    reachy.mobile_base.reset_odometry()
+    reachy.mobile_base.goto(x=x_target, y=y_target, theta=180)
+    time.sleep(2)
 
     # Turn back 180°
-    reachy.mobile_base.goto(x=0.0, y=0.0, theta=0)
+    reachy.mobile_base.goto(x=x_target, y=y_target, theta=0)
     time.sleep(2)
     reachy.mobile_base.reset_odometry()
 

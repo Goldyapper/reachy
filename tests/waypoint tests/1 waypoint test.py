@@ -16,7 +16,7 @@ turnarround(reachy)
 reachy.mobile_base.reset_odometry()
 
 # Return to origin
-move_backward_simulated(reachy,1,0)
+move_backward_simulated(reachy,-1,0)
 reachy.mobile_base.reset_odometry()
 
 # Final stop
