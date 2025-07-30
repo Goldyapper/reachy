@@ -2,24 +2,5 @@ ros2 launch reachy_sdk_server reachy_sdk_server.launch.py
 
 ros2 launch zuuu_hal hal.launch.py
 
-
-Traceback (most recent call last):
-  File "/home/safa/dev/reachy/tests/js.py", line 266, in <module>
-    main()
-  File "/home/safa/dev/reachy/tests/js.py", line 254, in main
-    controller = JoyController()
-  File "/home/safa/dev/reachy/tests/js.py", line 94, in __init__
-    self.mobile_base = MobileBaseSDK(ip_address)
-  File "/home/safa/dev/reachy/.venv/lib/python3.10/site-packages/mobile_base_sdk/mobile_base_sdk.py", line 57, in __init__
-    self._control_mode = get_control_mode().lower()
-  File "/home/safa/dev/reachy/.venv/lib/python3.10/site-packages/mobile_base_sdk/mobile_base_sdk.py", line 53, in get_control_mode
-    mode_id = self._stub.GetControlMode(Empty()).mode
-  File "/home/safa/dev/reachy/.venv/lib/python3.10/site-packages/grpc/_channel.py", line 1176, in __call__
-    return _end_unary_response_blocking(state, call, False, None)
-  File "/home/safa/dev/reachy/.venv/lib/python3.10/site-packages/grpc/_channel.py", line 1005, in _end_unary_response_blocking
-    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
-grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
-	status = StatusCode.UNKNOWN
-	details = "Exception calling application: Command '['ros2', 'param', 'get', '/zuuu_hal', 'control_mode']' returned non-zero exit status 1."
-	debug_error_string = "UNKNOWN:Error received from peer  {created_time:"2025-07-30T12:56:55.736641759+01:00", grpc_status:2, grpc_message:"Exception calling application: Command \'[\'ros2\', \'param\', \'get\', \'/zuuu_hal\', \'control_mode\']\' returned non-zero exit status 1."}"
->
+ros2 daemon stop
+ros2 daemon start
