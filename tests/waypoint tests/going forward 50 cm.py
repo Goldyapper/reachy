@@ -1,7 +1,6 @@
 from reachy_sdk import ReachySDK
 import time
 
-
 reachy = ReachySDK(host='172.16.42.113', with_mobile_base=True)
 reachy.mobile_base.reset_odometry()
 reachy.mobile_base.drive_mode = 'free_wheel'
