@@ -12,11 +12,11 @@ time.sleep(3)
 reachy.mobile_base.reset_odometry()
 
 # Rotate 360° in 60° steps
-turnarround()
+turnarround(reachy)
 reachy.mobile_base.reset_odometry()
 
 # Return to origin
-move_backward_simulated(distance=1.0)
+move_backward_simulated(reachy,1,0)
 reachy.mobile_base.reset_odometry()
 
 # Final stop

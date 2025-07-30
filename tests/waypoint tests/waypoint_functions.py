@@ -1,11 +1,7 @@
-from reachy_sdk import ReachySDK
 import time
 import math
-from waypoint_functions import *
 
-reachy = ReachySDK(host='172.16.42.113', with_mobile_base=True)
-
-def turnarround():
+def turnarround(reachy):
     for i in range(6):
         angle_deg = (i + 1) * 60
         print(f"Rotating to {angle_deg}°...")
@@ -15,24 +11,25 @@ def turnarround():
     reachy.mobile_base.goto(x=0.0, y=0.0, theta=0)
     time.sleep(1.5)
 
-def move_backward_simulated(distance):
+def move_backward_simulated(reachy,x_target, y_target):
     """Simulate backward movement by rotating, moving forward, then rotating back."""
-    print(f"Simulating backward movement of {distance} meters...")
+    print(f"Simulating backward movement to x={x_target}, y={y_target}")
 
     # Turn 180°
     reachy.mobile_base.goto(x=0.0, y=0.0, theta=180)
     time.sleep(2)
 
     # Move forward (actually moving backward from original heading)
-    reachy.mobile_base.goto(x=-distance, y=0.0, theta=180)
-    time.sleep(2)
+    safe_goto(reachy,x_target, -y_target, 0.0)
+    reachy.mobile_base.reset_odometry()
 
     # Turn back 180°
-    reachy.mobile_base.goto(x=-distance, y=0.0, theta=0)
+    reachy.mobile_base.goto(x=0.0, y=0.0, theta=0)
     time.sleep(2)
+    reachy.mobile_base.reset_odometry()
 
 
-def safe_goto(x_target, y_target, theta_target):
+def safe_goto(reachy,x_target, y_target, theta_target):
     """
     Move Reachy safely to (x_target, y_target, theta_target) using incremental steps,
     each limited to 1m in absolute coordinates. Resets odometry after each step.
