@@ -7,6 +7,7 @@
     <list default="true" id="361d2d8c-adf7-4301-a4ed-c3d8e41b2297" name="Changes" comment="arms move but not smoothly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start cmd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/start cmd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/waypoint tests/go to one waypoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/waypoint tests/go to one waypoint.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,7 @@
       <recent name="$PROJECT_DIR$/tests/arms test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.js">
+  <component name="RunManager" selected="Python.go to one waypoint">
     <configuration name="3 waypoints test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="reachy" />
       <option name="ENV_FILES" value="" />
@@ -205,10 +206,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.go to one waypoint" />
         <item itemvalue="Python.js" />
         <item itemvalue="Python.going forward 50 cm" />
         <item itemvalue="Python._channel" />
-        <item itemvalue="Python.go to one waypoint" />
         <item itemvalue="Python.3 waypoints test" />
       </list>
     </recent_temporary>

@@ -4,3 +4,9 @@ ros2 launch zuuu_hal hal.launch.py
 
 ros2 daemon stop
 ros2 daemon start
+
+run:
+ros2 param get /zuuu_hal control_mode
+
+it should be:
+ros2 param get /zuuu_hal control_mode
