@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="361d2d8c-adf7-4301-a4ed-c3d8e41b2297" name="Changes" comment="arms move but not smoothly">
-      <change afterPath="$PROJECT_DIR$/start cmd.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms test/clap.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/clap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms test/opening the hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/opening the hand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start cmd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/start cmd.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/arms test/turn on and off.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/turn on and off.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/waypoint tests/3 waypoints test" beforeDir="false" afterPath="$PROJECT_DIR$/tests/waypoint tests/3 waypoints test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/waypoint tests/go to one waypoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/waypoint tests/go to one waypoint.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,7 @@
     &quot;Python.2 waypoints.executor&quot;: &quot;Run&quot;,
     &quot;Python.3 waypoints test.executor&quot;: &quot;Run&quot;,
     &quot;Python.90 degrees left arm.executor&quot;: &quot;Run&quot;,
+    &quot;Python._channel.executor&quot;: &quot;Run&quot;,
     &quot;Python.arms test.executor&quot;: &quot;Run&quot;,
     &quot;Python.arms_test.executor&quot;: &quot;Run&quot;,
     &quot;Python.clap.executor&quot;: &quot;Run&quot;,
@@ -72,8 +72,8 @@
       <recent name="$PROJECT_DIR$/tests/arms test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.2 waypoints">
-    <configuration name="2 waypoints" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.js">
+    <configuration name="3 waypoints test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="reachy" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,7 +86,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/waypoint tests/2 waypoints.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/waypoint tests/3 waypoints test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="_channel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="reachy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.venv/lib/python3.10/site-packages/grpc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/.venv/lib/python3.10/site-packages/grpc/_channel.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -139,7 +161,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="initial" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="js" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="reachy" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,7 +174,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/initial.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/js.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,35 +206,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="opening the hand" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="reachy" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/arms test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/arms test/opening the hand.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.2 waypoints" />
-        <item itemvalue="Python.opening the hand" />
+        <item itemvalue="Python.js" />
         <item itemvalue="Python.going forward 50 cm" />
+        <item itemvalue="Python._channel" />
         <item itemvalue="Python.go to one waypoint" />
-        <item itemvalue="Python.initial" />
+        <item itemvalue="Python.3 waypoints test" />
       </list>
     </recent_temporary>
   </component>

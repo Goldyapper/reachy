@@ -3,6 +3,7 @@ from reachy_sdk import ReachySDK
 
 reachy = ReachySDK(host='172.16.42.113')
 reachy.turn_on('l_arm')
+reachy.turn_on('r_arm')
 print(reachy.joints.l_shoulder_pitch.compliant)  # should be False
 
 
@@ -48,5 +49,6 @@ move_arm(current_postion, rest_positions, steps, dt)
 
 
 reachy.turn_off_smoothly('l_arm')
+reachy.turn_off_smoothly('r_arm')
 
 print(reachy.joints.keys())
