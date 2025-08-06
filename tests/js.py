@@ -164,24 +164,36 @@ class JoyController():
                         self.arm_state = 'going_up'
                         self.arm_move_start_time = time.time()
 
-                if self.j.get_button(6):  # l2
-                    self.lin_speed_ratio = min(3.0, self.lin_speed_ratio+0.05)
-                    print("max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s"
-                        .format(self.lin_speed_ratio*100, self.rot_speed_ratio*100))
+                if  self.j.get_button(6):  # l2
+                    self.lin_speed_ratio = min(3.0, self.lin_speed_ratio + 0.05)
+                    print(
+                        "max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s".format(
+                            self.lin_speed_ratio * 100, self.rot_speed_ratio * 100
+                        )
+                    )
                 if self.j.get_button(7):  # r2
-                    self.rot_speed_ratio = min(12.0, self.rot_speed_ratio+0.2)
-                    print("max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s"
-                        .format(self.lin_speed_ratio*100, self.rot_speed_ratio*100))
+                    self.rot_speed_ratio = min(12.0, self.rot_speed_ratio + 0.2)
+                    print(
+                        "max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s".format(
+                            self.lin_speed_ratio * 100, self.rot_speed_ratio * 100
+                        )
+                    )
                 if self.j.get_button(4):  # l1
-                    self.lin_speed_ratio = max(0.0, self.lin_speed_ratio-0.05)
-                    print("max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s"
-                        .format(self.lin_speed_ratio*100, self.rot_speed_ratio*100))
+                    self.lin_speed_ratio = max(0.0, self.lin_speed_ratio - 0.05)
+                    print(
+                        "max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s".format(
+                            self.lin_speed_ratio * 100, self.rot_speed_ratio * 100
+                        )
+                    )
                 if self.j.get_button(5):  # r1
-                    self.rot_speed_ratio = max(0.0, self.rot_speed_ratio-0.2)
-                    print("max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s"
-                        .format(self.lin_speed_ratio*100, self.rot_speed_ratio*100))
-            elif event.type == pygame.JOYBUTTONUP:
-                pass
+                    self.rot_speed_ratio = max(0.0, self.rot_speed_ratio - 0.2)
+                    print(
+                        "max translational speed: {:.1f}m/s, max rotational speed: {:.1f}rad/s".format(
+                            self.lin_speed_ratio * 100, self.rot_speed_ratio * 100
+                        )
+                    )
+                elif event.type == pygame.JOYBUTTONUP:
+                    pass
 
         if self.nb_joy != pygame.joystick.get_count():
             msg = "Controller disconnected!"
@@ -239,16 +251,17 @@ class JoyController():
 
     def main_tick(self):
         self.tick_controller()
-        self.update_arm_position()
         x_vel, y_vel, rot_vel = self.speeds_from_joystick()
-        self.mobile_base.set_speed(x_vel=x_vel, y_vel=y_vel, rot_vel=rot_vel*180.0/math.pi)
+        self.mobile_base.set_speed(x_vel=x_vel, y_vel=y_vel, rot_vel=rot_vel * 180.0 / math.pi)
 
-        print("\nx_vel: {:.2f}m/s, y_vel: {:.2f}m/s, theta_vel: {:.2f}rad/s.\n"
-              "Max lin_vel: {:.2f}m/s, max rot_vel: {:.2f}rad/s".format(
-                  x_vel, y_vel, rot_vel, self.lin_speed_ratio, self.rot_speed_ratio))
+        print(
+            "\nx_vel: {:.2f}m/s, y_vel: {:.2f}m/s, theta_vel: {:.2f}rad/s.\n"
+            "Max lin_vel: {:.2f}m/s, max rot_vel: {:.2f}rad/s".format(
+                x_vel, y_vel, rot_vel, self.lin_speed_ratio, self.rot_speed_ratio
+            )
+        )
         # self.print_controller()
         time.sleep(0.01)
-
 
 def main():
     controller = JoyController()
