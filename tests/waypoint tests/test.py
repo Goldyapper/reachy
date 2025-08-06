@@ -11,4 +11,4 @@ reachy.mobile_base.reset_odometry()
 reachy.mobile_base.drive_mode = 'brake'
 
 
-move_backward_simulated(reachy,-2.0, 0.0)
+move_backward_simulated(reachy,-4.0, 0.0)
