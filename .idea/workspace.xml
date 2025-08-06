@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="361d2d8c-adf7-4301-a4ed-c3d8e41b2297" name="Changes" comment="arms move but not smoothly">
-      <change afterPath="$PROJECT_DIR$/tests/IP_address.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/waypoint tests/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms test/90 degrees left arm.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/90 degrees left arm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms test/clap.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/clap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms test/opening the hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/opening the hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms test/turn on and off.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/turn on and off.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/arms test/wave.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/arms test/wave.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/js.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/js.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/waypoint tests/1 waypoint test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/waypoint tests/1 waypoint test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/waypoint tests/2 waypoints.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/waypoint tests/2 waypoints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/waypoint tests/going forward 50 cm.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/waypoint tests/going forward 10 cm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/waypoint tests/waypoint_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/waypoint tests/waypoint_functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,46 +34,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.1 waypoint test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.2 waypoints.executor&quot;: &quot;Run&quot;,
-    &quot;Python.3 waypoints test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.90 degrees left arm.executor&quot;: &quot;Run&quot;,
-    &quot;Python._channel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.arms test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.arms_test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.clap.executor&quot;: &quot;Run&quot;,
-    &quot;Python.go to one waypoint.executor&quot;: &quot;Run&quot;,
-    &quot;Python.going forward 50 cm.executor&quot;: &quot;Run&quot;,
-    &quot;Python.initial.executor&quot;: &quot;Run&quot;,
-    &quot;Python.js.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.opening the hand.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_camera.executor&quot;: &quot;Run&quot;,
-    &quot;Python.turn on and off.executor&quot;: &quot;Run&quot;,
-    &quot;Python.wave.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/safa/dev/reachy&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.1 waypoint test.executor": "Run",
+    "Python.2 waypoints.executor": "Run",
+    "Python.3 waypoints test.executor": "Run",
+    "Python.90 degrees left arm.executor": "Run",
+    "Python._channel.executor": "Run",
+    "Python.arms test.executor": "Run",
+    "Python.arms_test.executor": "Run",
+    "Python.clap.executor": "Run",
+    "Python.go to one waypoint.executor": "Run",
+    "Python.going forward 50 cm.executor": "Run",
+    "Python.initial.executor": "Run",
+    "Python.js.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.opening the hand.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.test_camera.executor": "Run",
+    "Python.turn on and off.executor": "Run",
+    "Python.wave.executor": "Run",
+    "Python.waypoint_functions.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/safa/dev/reachy",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/tests/arms test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.1 waypoint test">
+  <component name="RunManager" selected="Python.test">
     <configuration name="1 waypoint test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="reachy" />
       <option name="ENV_FILES" value="" />
@@ -101,7 +98,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="90 degrees left arm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="2 waypoints" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="reachy" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,11 +107,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/arms test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/waypoint tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/arms test/90 degrees left arm.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/waypoint tests/2 waypoints.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="clap" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="going forward 10 cm" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="reachy" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,33 +129,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/arms test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/waypoint tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/arms test/clap.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="initial" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="reachy" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/initial.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/waypoint tests/going forward 10 cm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -190,7 +165,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="opening the hand" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="reachy" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -199,11 +174,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/arms test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/waypoint tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/arms test/opening the hand.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/waypoint tests/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="waypoint_functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="reachy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/waypoint tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/waypoint tests/waypoint_functions.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.going forward 10 cm" />
+        <item itemvalue="Python.waypoint_functions" />
+        <item itemvalue="Python.2 waypoints" />
         <item itemvalue="Python.1 waypoint test" />
-        <item itemvalue="Python.opening the hand" />
-        <item itemvalue="Python.clap" />
-        <item itemvalue="Python.90 degrees left arm" />
-        <item itemvalue="Python.initial" />
       </list>
     </recent_temporary>
   </component>

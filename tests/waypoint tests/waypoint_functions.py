@@ -11,23 +11,58 @@ def turnarround(reachy):
     reachy.mobile_base.goto(x=0.0, y=0.0, theta=0)
     time.sleep(1.5)
 
-def move_backward_simulated(reachy,x_target, y_target):
-    """Simulate backward movement by rotating, moving forward, then rotating back."""
+
+def move_backward_simulated(reachy, x_target, y_target, max_step=0.9):
+    """
+    Simulate backward movement using small steps without exceeding SDK limits.
+    - Rotate once to 180°
+    - Move in cumulative steps up to ±1.0m total
+    - Avoid repeated rotation by not resetting odometry mid-way
+    """
     print(f"Simulating backward movement to x={x_target}, y={y_target}")
 
-    # Turn 180°
+    # Step 1: Rotate to face backward
     reachy.mobile_base.goto(x=0.0, y=0.0, theta=180)
     time.sleep(2)
 
-    # Move forward (actually moving backward from original heading)
-    reachy.mobile_base.goto(x=x_target, y=y_target, theta=180)
-    time.sleep(2)
+    total_distance = math.hypot(x_target, y_target)
+    if total_distance == 0:
+        print("No movement needed.")
+        return
 
-    # Turn back 180°
-    reachy.mobile_base.goto(x=x_target, y=y_target, theta=0)
+    num_steps = math.ceil(total_distance / max_step)
+    dx = x_target / total_distance
+    dy = y_target / total_distance
+
+    current_x, current_y = 0.0, 0.0
+    current_theta = 180
+
+    for i in range(num_steps):
+        step_distance = min(max_step, total_distance - i * max_step)
+        step_x = dx * step_distance
+        step_y = dy * step_distance
+
+        current_x += step_x
+        current_y += step_y
+
+        # Prevent exceeding SDK max range
+        if abs(current_x) > 1.0 or abs(current_y) > 1.0:
+            print(f"Step {i+1}: Position out of bounds, resetting odometry.")
+            reachy.mobile_base.reset_odometry()
+            time.sleep(0.5)
+            current_x = -step_x
+            current_y = -step_y
+            current_theta = 0
+
+        print(f"Step {i+1}/{num_steps}: Moving to x={current_x:.2f}, y={current_y:.2f}, heading=180°")
+        reachy.mobile_base.goto(x=current_x, y=current_y, theta=current_theta)
+        time.sleep(1)
+
+    # Step 3: Rotate back to original heading
+    print("Rotating back to original heading")
+    reachy.mobile_base.goto(x=current_x, y=current_y, theta=180)
     time.sleep(2)
     reachy.mobile_base.reset_odometry()
-
 
 def safe_goto(reachy,x_target, y_target, theta_target):
     """

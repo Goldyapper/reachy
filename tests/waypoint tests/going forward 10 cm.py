@@ -10,7 +10,7 @@ reachy = ReachySDK(host=ip_address,with_mobile_base=True)
 reachy.mobile_base.reset_odometry()
 reachy.mobile_base.drive_mode = 'free_wheel'
 
-reachy.mobile_base.goto(x=0.5, y=0, theta=0.0)#go forward 50cm
+reachy.mobile_base.goto(x=0.1, y=0, theta=0.0)#go forward 50cm
 
 time.sleep(3)
 reachy.mobile_base.goto(x=0, y=0, theta=0.0)#return to start
