@@ -1,8 +1,9 @@
 from reachy_sdk import ReachySDK
+from IP_address import *
 import cv2 as cv
 from rplidar import RPLidar
 
-reachy_mobile = ReachySDK(host='172.16.42.113')
+reachy_mobile = ReachySDK(host=ip_address)
 print(reachy_mobile)
 #reachy_mobile.turn_off("reachy")
 #reachy_mobile.mobile_base.reset_odometry()

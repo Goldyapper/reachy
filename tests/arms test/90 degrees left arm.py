@@ -1,7 +1,12 @@
 import time
 from reachy_sdk import ReachySDK
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-reachy = ReachySDK(host='192.168.100.100')
+from tests.IP_address import ip_address
+
+reachy = ReachySDK(host=ip_address)
 reachy.turn_on('l_arm')
 print(reachy.joints.l_shoulder_pitch.compliant)  # should be False
 

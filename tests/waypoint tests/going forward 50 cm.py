@@ -1,7 +1,12 @@
 from reachy_sdk import ReachySDK
 import time
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-reachy = ReachySDK(host='172.16.42.113', with_mobile_base=True)
+from tests.IP_address import ip_address
+
+reachy = ReachySDK(host=ip_address,with_mobile_base=True)
 reachy.mobile_base.reset_odometry()
 reachy.mobile_base.drive_mode = 'free_wheel'
 

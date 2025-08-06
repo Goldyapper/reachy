@@ -8,6 +8,7 @@ import math
 
 from mobile_base_sdk import MobileBaseSDK
 from reachy_sdk import ReachySDK
+from IP_address import *
 
 
 # To be able to use pygame in "headless" mode, typically if there is no screen connected,
@@ -89,7 +90,6 @@ class JoyController():
         self.arm_move_start_time = None
 
         print(msg)
-        ip_address = '172.16.42.113'  # Replace with your Reachy's IP address
         print(f"Connecting to {ip_address}")
         self.mobile_base = MobileBaseSDK(ip_address)
 
@@ -159,6 +159,7 @@ class JoyController():
                     msg = "Pressed emergency stop!"
                     print(msg)
                     self.emergency_shutdown(msg)
+
                 if self.j.get_button(4):  # button 4 pressed
                     if self.arm_state in ['idle', 'going_down']:
                         self.arm_state = 'going_up'
@@ -253,6 +254,7 @@ class JoyController():
         self.tick_controller()
         x_vel, y_vel, rot_vel = self.speeds_from_joystick()
         self.mobile_base.set_speed(x_vel=x_vel, y_vel=y_vel, rot_vel=rot_vel * 180.0 / math.pi)
+        self.update_arm_position()
 
         print(
             "\nx_vel: {:.2f}m/s, y_vel: {:.2f}m/s, theta_vel: {:.2f}rad/s.\n"
